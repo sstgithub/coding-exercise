@@ -24,18 +24,20 @@ class KevyExercise
 	end
 
 	def self.compute(user_int)
-		if user_int >= 3 # this if-else loop assumes that integer has to be greater than 2 for this problem otherwise there will be no prime number integer to test in secret function as no prime number exists below 2
-			int = user_int - 1
+		unless user_int >= 3 # this first loop assumes that integer has to be greater than 2 for this problem otherwise there will be no prime number integer to test in secret function as no prime number exists below 2
+		puts "Please pick an integer that is greater than 2!"
+		@user_int = gets.to_i
+		
 
-			until int == 0
-				check_if_prime(int)
-				int -= 1
-			end
+	else
+		int = user_int - 1
 
-		else
-			puts "Please pick an integer that is greater than 2!"
-			initialize
+		until int == 1
+			check_if_prime(int)
+			int -= 1
 		end
+
+	
 	end
 
 
