@@ -4,8 +4,8 @@ require_relative 'secret' #Part of my assumptions (see below) - secret file is i
 # Coding problem statement(given): You are given a function 'secret()' that accepts a single integer parameter and returns an integer. In Ruby, write a program that determines if this function is an additive function [ secret(x+y) = secret(x) + secret(y) ] for all prime numbers under N where N is a given integer.
 
 #Assumptions made:
-	# 1. x and y are possible prime numbers below N. 
-	# 2. If N itself is a prime number, it is not counted as a prime number under N. So, if user inputs the integer '7', the program I am writing will only test to see if secret(2+3+5) == secret(2) + secret(3) + secret(5) == secret(7)
+	# 1. The objective is to write a program that will find all the prime numbers below a given integer (that the user will put in) and then see if secret(prime#1+prime#2+prime#(N-1)) == secret(prime#1) + secret(prime#2) + secret(prime#(N-1)) is true for each of these prime numbers
+	# 2. If N itself is a prime number, it is not counted as a prime number under N. So, if user inputs the integer '7', the program I am writing will only test to see if secret(2+3+5) == secret(2) + secret(3) + secret(5)
 	# 3. Secret function is defined in class Secret in file secret in the same file path as this program.
 	# 4. User integer must be equal to or above '3' otherwise program will ask for another input. This is because 3 is the first integer that has a prime number below it (see assumption 2), so anything below it will probably break the secret function.
 
