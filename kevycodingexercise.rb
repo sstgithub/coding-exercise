@@ -16,6 +16,9 @@ require_relative 'secret' #Part of my assumptions (see below) - secret file is i
 	# 4. prime_flag -- this means exactly what it says...it flags a number it is prime.
 	# 5. @y_total and @secret_y_total -- see the adder function below
 
+	#How I could make this better:
+		# 1. When checking an integer to see if its prime, first take the square root of the integer, then only divide that integer by prime numbers that are below it. Doing both of these will significantly reduce the computation time required when dealing with very large numbers.
+
 class KevyExercise
 	def initialize
 		puts "Enter your integer!"
@@ -29,12 +32,13 @@ class KevyExercise
 		@user_int = gets.to_i
 		
 
-	else
-		int = user_int - 1
+		else
+			int = user_int - 1
 
-		until int == 1
-			check_if_prime(int)
-			int -= 1
+			until int == 1
+				check_if_prime(int)
+				int -= 1
+			end
 		end
 
 	
