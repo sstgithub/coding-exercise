@@ -1,7 +1,3 @@
-#this will just test by printing each prime number for each user input I put in. 
-
-
-
 
 def compute(user_int)
 	unless user_int >= 3 # this first loop assumes that integer has to be greater than 2 for this problem otherwise there will be no prime number integer to test in secret function as no prime number exists below 2
@@ -61,15 +57,15 @@ end
 
 def final(y_total, secret_y_total)
 	if secret(@y_total) == @secret_y_total
-		puts "true"
+		puts "True - the secret function is additive of all prime numbers below N"
 	else
-		puts "false"
+		puts "False - the secret function is not additive of all prime numbers below N"
 	end
 end
 
 puts "Enter your integer!"
 @user_int = gets.to_i
 compute(@user_int)
-puts "#{@y_total} is sum of prime ints."
-puts "#{@secret_y_total} is sum of prime ints put in secret function one by one."
+# puts "#{@y_total} is sum of prime ints."
+# puts "#{@secret_y_total} is sum of prime ints put in secret function one by one."
 final(@y_total, @secret_y_total)
