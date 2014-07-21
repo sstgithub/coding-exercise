@@ -10,35 +10,18 @@ class KevyExercise
 	def initialize
 		puts "Enter your integer!"
 		@user_int = gets.to_i
-		compute(user_int)
+		compute(@user_int)
 	end
 
 	def self.compute(user_int)
-		if user_int >= 3 # this if-else loop assumes that integer has to be greater than 2 for this problem otherwise there will be no prime number integer to test in secret as there is no prime number below 2
+		if user_int >= 3 # this if-else loop assumes that integer has to be greater than 2 for this problem otherwise there will be no prime number integer to test in secret function as no prime number exists below 2
 			int = user_int - 1
-			until int == 0
-				check_if_prime(int)
-				int -= 1
-			end
-		else
-			puts "Please pick an integer that is greater than 2!"
-			initialize
-		end
-	end
-
-	def self.compute(user_int)
-		if user_int >= 3 # this if-else loop assumes that integer has to be greater than 2 for this problem otherwise there will be no prime number integer to test in secret as there is no prime number below 2
-			int = user_int - 1
+			
 			until int == 0
 				check_if_prime(int)
 				int -= 1
 			end
 
-			if prime_flag == true
-				adder(int)
-			end
-
-			final...
 		else
 			puts "Please pick an integer that is greater than 2!"
 			initialize
@@ -53,7 +36,7 @@ class KevyExercise
 		num = 2;
 		prime_flag = true;
 
-		while num < int
+		until num >= int
 			if int % num == 0
 				prime_flag = false;
 			else
@@ -61,11 +44,11 @@ class KevyExercise
 			end
 		end
 
-		#if it goes through and the modulus never equals 0 that means the number is prime and prime stays flagged as true. In this case:
+		#if it goes through check_if_prime all the way till int == 0, and the modulus never equals 0 that means the number is prime and prime stays flagged as true and the number needs to be added to @y_total and to @secret_y_total. So:
 
 		if prime_flag == true
 			adder(int)
-		end
+		end	
 	end
 
 	def self.adder(int)
@@ -80,10 +63,13 @@ class KevyExercise
 		else
 			@secret_y_total = secret(@y_total)
 		end
+
+		final(@y_total, @secret_y_total)
 	end
 
-	def self.final #still should pass in parameters even if they are class variables.
-		if secret(@y_total) == @secret_y_total == secret(@user_int)
+
+	def self.final(y_total, secret_y_total) #still should pass in parameters even if they are class variables?
+		if secret(y_total) == secret_y_total == secret(@user_int)
 			puts "Your hypothesis was correct!"
 		else
 			puts "Your hypothesis was incorrect."
