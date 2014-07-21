@@ -68,13 +68,13 @@ class KevyExercise
 	end
 
 	def self.adder(prime_int) # this function just adds the prime integer discovered in check_if_prime to @y_total which is equivalent to the 'x+y' in the problem statement, and it also runs the prime integer through the secret function than adds it to @secret_y_total which is the equivalent of 'secret(x) + secret(y)'' in the problem statement
-		if @y_total #possible to clean this up by using ||= operator instead?
+		if @y_total 
 			@y_total += prime_int
 		else
 			@y_total = prime_int
 		end
 
-		if @secret_y_total #possible to clean this up by using ||= operator instead?
+		if @secret_y_total 
 			@secret_y_total += secret(@y_total)
 		else
 			@secret_y_total = secret(@y_total)

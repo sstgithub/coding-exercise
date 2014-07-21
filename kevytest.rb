@@ -33,14 +33,43 @@ def check_if_prime(int)
 		end
 	end
 
-
 	if prime_flag == true
-		puts int 
-		puts " is a prime number."
+		adder(int)
 	end
 
+end
+
+
+def adder(prime_int)
+	if @y_total 
+			@y_total += prime_int
+	else
+		@y_total = prime_int
+	end
+
+	if @secret_y_total 
+		@secret_y_total += secret(prime_int)
+	else
+		@secret_y_total = secret(prime_int)
+	end
+
+end
+
+def secret(y) #placeholder for calling an outside file function here
+	y = y * 2
+end
+
+def final(y_total, secret_y_total)
+	if secret(@y_total) == @secret_y_total
+		puts "true"
+	else
+		puts "false"
+	end
 end
 
 puts "Enter your integer!"
 @user_int = gets.to_i
 compute(@user_int)
+puts "#{@y_total} is sum of prime ints."
+puts "#{@secret_y_total} is sum of prime ints put in secret function one by one."
+final(@y_total, @secret_y_total)
