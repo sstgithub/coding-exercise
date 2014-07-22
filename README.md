@@ -7,8 +7,8 @@ Kevy Coding Exercise
 #### Assumptions made:
 1. The objective is to write a program that will find all the prime numbers below a given integer (that the user will put in) and then see if secret(prime#1+prime#2+prime#(N-1)) == secret(prime#1) + secret(prime#2) + secret(prime#(N-1)) is true for each of these prime numbers
 2. If N itself is a prime number, it is not counted as a prime number under N. So, if user inputs the integer '7', the program I am writing will only test to see if secret(2+3+5) == secret(2) + secret(3) + secret(5)
-3. Secret function is defined in class Secret in file secret in the same file path as this program.
-4. User integer must be equal to or above '3' otherwise program will ask for another input. This is because 3 is the first integer that has a prime number below it (see assumption 2), so anything below it will probably break the secret function.
+3. Secret function is defined in file secret in the same file path as this program.
+4. User integer must be equal to or above '3' otherwise program will ask for another input. This is because 3 is the first integer that has a prime number below it (see assumption 2), so I assumed that anything below it will break the secret function as there would be no prime numbers to test in it.
 
 #### Variables used and definitions:
 1. @user_int -- this is equal to N in the problem statement
@@ -18,5 +18,5 @@ Kevy Coding Exercise
 5. @y_total and @secret_y_total -- see the adder function in program.
 
 #### How I could make this better:
-1. When checking an integer to see if its prime, first take the square root of the integer, then only divide that integer by prime numbers that are below it. Doing both of these will significantly reduce the computation time required when dealing with very large numbers, while still maintaining same amount of accuracy in determining whether a number is prime.
+1. When checking an integer to see if its prime, I could first take the square root of the integer, then only divide that integer by prime numbers that are below it. Doing both of these will significantly reduce the computation time required when dealing with very large numbers.
 2. Provide some loading messages such as '25% complete', '50% complete' etc so user has some indication of when program will complete when dealing with very large numbers.
