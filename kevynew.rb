@@ -37,6 +37,8 @@ class KevyNew
 			end
 		end
 
+		#if it goes through check_if_prime all the way till int == 0, and the modulus never equals 0 that means the number is prime and prime stays flagged as true and the number needs to be added to @y_total and to @secret_y_total. So:
+
 		if prime_flag == true
 			adder(int)
 		end
@@ -44,7 +46,7 @@ class KevyNew
 	end
 
 
-	def adder(prime_int)
+	def adder(prime_int) # this function just adds the prime integer discovered in check_if_prime to @y_total which is equivalent to the 'x+y' in the problem statement, and it also runs the prime integer through the secret function than adds it to @secret_y_total which is the equivalent of 'secret(x) + secret(y)'' in the problem statement
 		if @y_total 
 				@y_total += prime_int
 		else
@@ -59,7 +61,7 @@ class KevyNew
 
 	end
 
-	def final(y_total, secret_y_total)
+	def final(y_total, secret_y_total) # this function outputs "True..." if the secret function is an additive function of all prime numbers below N, or it outputs "False..." if the secret function is not an additive function of all prime numbers below N.
 		if secret(@y_total) == @secret_y_total
 			puts "True - the secret function is additive of all prime numbers below #{@user_int}."
 		else
