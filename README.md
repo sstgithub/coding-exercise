@@ -7,7 +7,7 @@ Kevy Coding Exercise
 #### Assumptions made:
 1. The objective is to write a program that will find all the prime numbers below a given integer (that the user will put in) and then see if secret(prime#1+prime#2+prime#(N-1)) == secret(prime#1) + secret(prime#2) + secret(prime#(N-1)) is true for each of these prime numbers
 2. If N itself is a prime number, it is not counted as a prime number under N. So, if user inputs the integer '7', the program I am writing will only test to see if secret(2+3+5) == secret(2) + secret(3) + secret(5)
-3. Secret function is defined in file secret in the same file path as this program.
+3. Secret function is defined in file 'secret.rb' in the same file path as this program.
 4. User integer must be equal to or above '3' otherwise program will ask for another input. This is because 3 is the first integer that has a prime number below it (see assumption 2), so I assumed that anything below it will break the secret function as there would be no prime numbers to test in it.
 
 #### Variables used and definitions:
