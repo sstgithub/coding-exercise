@@ -1,7 +1,7 @@
 require_relative 'secret.rb' #assuming that there is a secret.rb file in same file path, with secret function inside it (see Readme.txt for all assumptions and function and variable definitions)
 
 
-class KevyNew
+class KevyFinal
 	def initialize
 	end
 
@@ -61,7 +61,7 @@ class KevyNew
 
 	end
 
-	def final(y_total, secret_y_total) # this function outputs "True..." if the secret function is an additive function of all prime numbers below N, or it outputs "False..." if the secret function is not an additive function of all prime numbers below N.
+	def result(y_total, secret_y_total) # this function outputs "True..." if the secret function is an additive function of all prime numbers below N, or it outputs "False..." if the secret function is not an additive function of all prime numbers below N.
 		if secret(@y_total) == @secret_y_total
 			puts "True - the secret function is additive of all prime numbers below #{@user_int}."
 		else
@@ -70,7 +70,7 @@ class KevyNew
 	end
 end
 
-kevy_new = KevyNew.new
+kevy_final = KevyFinal.new
 
-kevy_new.get_integer
-kevy_new.final(@y_total, @secret_y_total)
+kevy_final.get_integer
+kevy_final.result(@y_total, @secret_y_total)
