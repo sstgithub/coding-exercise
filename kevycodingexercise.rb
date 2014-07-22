@@ -20,6 +20,8 @@ require_relative 'secret' #Part of my assumptions (see below) - secret file is i
 		# 1. When checking an integer to see if its prime, first take the square root of the integer, then only divide that integer by prime numbers that are below it. Doing both of these will significantly reduce the computation time required when dealing with very large numbers, while still maintaining same amount of accuracy in determining whether a number is prime.
 		# 2. Provide some loading messages such as '25% complete', '50% complete' etc so user has some indication of when program will complete when dealing with very large numbers.
 
+
+
 class KevyExercise
 	def initialize
 		puts "Enter your integer!"
@@ -87,8 +89,7 @@ class KevyExercise
 	end
 
 
-	def self.final(y_total, secret_y_total) # this function outputs "Your hypothesis was correct!" if the secret function is an additive function of all prime numbers below N, or it outputs "Your hypothesis was incorrect." if the secret function is not an additive function of all prime numbers below N.
-	#still should pass in parameters even if they are class variables?
+	def self.final(y_total, secret_y_total) # this function outputs "True..." if the secret function is an additive function of all prime numbers below N, or it outputs "False..." if the secret function is not an additive function of all prime numbers below N.
 		if secret(y_total) == secret_y_total == secret(@user_int)
 			puts "Your hypothesis was correct!"
 		else
