@@ -1,6 +1,7 @@
 kevy-coding-exercise
 ====================
-Coding problem statement(given): You are given a function 'secret()' that accepts a single integer parameter and returns an integer. In Ruby, write a program that determines if this function is an additive function [ secret(x+y) = secret(x) + secret(y) ] for all prime numbers under N where N is a given integer.
+Coding problem statement: 
+> You are given a function 'secret()' that accepts a single integer parameter and returns an integer. In Ruby, write a program that determines if this function is an additive function [ secret(x+y) = secret(x) + secret(y) ] for all prime numbers under N where N is a given integer.
 
 Assumptions made:
 	1. The objective is to write a program that will find all the prime numbers below a given integer (that the user will put in) and then see if secret(prime#1+prime#2+prime#(N-1)) == secret(prime#1) + secret(prime#2) + secret(prime#(N-1)) is true for each of these prime numbers
