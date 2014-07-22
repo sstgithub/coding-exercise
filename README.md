@@ -14,6 +14,9 @@
 4. prime_flag -- this means exactly what it says...it flags a number if it is prime.
 5. @y_total and @secret_y_total -- see the adder function in program.
 
+#### More on my thought process:
+* The kevytest file was created so I could first test and figure out the best way to flag all the prime numbers below a user input integer. From there I went on to coding the full app which also called the secret function. I created a secret.rb file with a possible secret function based on the problem statement, just to be able to fully test my actual program.
+
 #### How I could make this better:
 1. When checking an integer to see if its prime, I could first take the square root of the integer, then only divide that integer by prime numbers that are below it. Doing both of these will significantly reduce the computation time required when dealing with very large numbers.
 2. Provide some loading messages such as '25% complete', '50% complete' etc so user has some indication of when program will complete when dealing with very large numbers.
